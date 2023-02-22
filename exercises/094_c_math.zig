@@ -13,7 +13,7 @@
 // values. In the C library "math" there is a function called "fmod".
 // The "f" stands for floating and means that we can solve modulo for
 // real numbers. With this function it should be possible to normalize
-// our angel. Let's go.
+// our angle. Let's go.
 
 const std = @import("std");
 
@@ -23,12 +23,12 @@ const c = @cImport({
 });
 
 pub fn main() !void {
-    const angel = 765.2;
+    const angle = 765.2;
     const circle = 360;
 
-    // Here we call the C function 'fmod' to get our normalized angel.
-    const result = c.fmod(angel, circle);
+    // Here we call the C function 'fmod' to get our normalized angle.
+    const result = c.fmod(angle, circle);
 
     // We use formatters for the desired precision and to truncate the decimal places
-    std.debug.print("The normalized angle of {d: >3.1} degrees is {d: >3.1} degrees.\n", .{ angel, result });
+    std.debug.print("The normalized angle of {d: >3.1} degrees is {d: >3.1} degrees.\n", .{ angle, result });
 }
